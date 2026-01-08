@@ -1,0 +1,16 @@
+.sec_1{ /*imagen de sol de america*/
+    text-align:center;
+    position:fixed;
+  left: 300px;
+  top: 0px;
+  z-index: -1;
+    
+    
+}
+
+.sec_2{
+  position:fixed;
+  left: 350px;
+  top: 0px;
+  z-index: -1;
+}

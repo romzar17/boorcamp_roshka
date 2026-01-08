@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLA DE POSICIONES</title>
+    <style>
+
+    
+       table { 
+          margin: 0 auto ; 
+          border-collapse: collapse; 
+          margin-bottom: 12px; 
+        } 
+
+        th, td {
+           padding: 6px 10px;
+           border-bottom: 1px solid #cccccc;
+
+           }
+
+        th {
+          color: black;
+          border-bottom: 1px solid #999999;
+        }
+        
+        /* para mi primera columna que es club*/
+        th:first-child,
+        td:first-child{
+
+          padding: right 60px;
+          text-align: left;
+          width: 250px ; 
+        }
+
+        td :first-child img{
+          vertical-align: middle;
+          margin-right:9px;
+          width: 22px;
+          height: 22px;; 
+        }
+
+        /*alternar los colores de las filas*/
+        tr :nth-child(old){
+          background-color: burlywood; /*para las filas impares*/
+        }
+
+        tr :nth-child(even){
+          background-color: #999999;
+        }
+
+        td :first-child{
+          border-right: 1px solid #e0e0e0;
+        }
+
+  
+
+    </style>
+</head>
+<body>
+    <h2> TABLA DE POSICIONES</h2>
+    <table>
+        <tr> <!--las columnas de los titulos-->
+            <th class="Club">Club</th>
+
+            <th>PJ</th>
+            <th>G</th>
+            <th>E</th>
+            <th>P</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>DG</th>
+            <th>Pts</th>
+            <th>Ultimos 5</th>   
+        </tr> 
+
+        <tr> <!--para libertad  -->
+             <td class="Club">
+              <img src="libertad.png"
+              "22" height="22">
+            Libertad </td> 
+             <td>   13</td>
+             <td>10</td>
+             <td>2</td>
+             <td>1</td>
+             <td>30</td>
+             <td>12</td>
+             <td>18</td>
+             <td>32</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" > </td>
+        </tr> <!--fin libertad   -->
+             
+        <tr><!--para cerro  -->
+            <td>
+            <img src="cerro.png" 
+            "22" height="22">
+            Cerro Porteno </td>
+            <td>   13</td>
+             <td>10</td>
+             <td>1</td>
+             <td>2</td>
+             <td>25</td>
+             <td>19</td>
+             <td>18</td>
+             <td>31</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" > </td>
+        </tr> <!-- fil cerro  -->
+
+        <tr> <!--para olimpia  -->    
+            <td>
+              <img src="olimpia.png"
+              "22" height="22">
+              Olimpia</td>
+            <td>   13</td>
+             <td>7</td>
+             <td>3</td>
+             <td>3</td>
+             <td>19</td>
+             <td>13</td>
+             <td>6</td>
+             <td>24</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" > </td>
+        </tr> <!--fin olimpia-->
+
+        <tr> <!--para resistencia  -->
+            <td>
+              <img src="neutro.jpg"
+              "22" height="22">
+              Resistencia </td>
+            <td>   13</td>
+             <td>6</td>
+             <td>5</td>
+             <td>2</td>
+             <td>25</td>
+             <td>19</td>
+             <td>6</td>
+             <td>23</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" > </td>
+          </tr> <!--fin resistencia-->
+
+        <tr> <!--Sol de america  -->
+            <td>
+              <img src="sol.jpg"
+              "22" height="22">
+              Sol de America </td>
+            <td>   13</td>
+             <td>2</td>
+             <td>10</td>
+             <td>1</td>
+             <td>30</td>
+             <td>12</td>
+             <td>18</td>
+             <td>32</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" > </td>
+          </tr><!--fin sol  -->
+
+          <tr> <!--para nacional -->
+            <td>
+              <img src="nacional.png"
+              "22" height="22">
+              Nacional </td>
+            <td>   13</td>
+             <td>5</td>
+             <td>3</td>
+             <td>5</td>
+             <td>14</td>
+             <td>17</td>
+             <td>-3</td>
+             <td>18</td>
+             <td><img src="igual.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" > </td>
+          </tr><!--fin Sol -->
+
+          <tr> <!--tacuary -->
+            <td>
+              <img src="Tacuary.png"
+              "22" height="22">
+              Tacuary </td>
+            <td>   13</td>
+             <td>2</td>
+             <td>10</td>
+             <td>1</td>
+             <td>30</td>
+             <td>12</td>
+             <td>18</td>
+             <td>32</td>
+             <td><img src="igual.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" > ;</td>
+          </tr> <!--fin tacuary -->
+
+          <tr> <!--tacuary -->
+            <td>
+              <img src="guarani.png"
+              "22" height="22">
+              Guarani </td>
+            <td>   13</td>
+             <td>5</td>
+             <td>2</td>
+             <td>6</td>
+             <td>16</td>
+             <td>21</td>
+             <td>-5</td>
+             <td>17</td>
+             <td><img src="mal.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" > </td>
+          </tr> <!--fin Guarani -->
+
+          <tr> <!--tacuary -->
+            <td>
+              <img src="guairena.png"
+              "22" height="22">
+              Guareña </td>
+            <td>   13</td>
+             <td>5</td>
+             <td>2</td>
+             <td>7</td>
+             <td>12</td>
+             <td>14</td>
+             <td>-2</td>
+             <td>16</td>
+             <td><img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" > ;</td>
+          </tr> <!--fin guaireña -->
+
+          <tr> <!--12 de octubre  -->
+            <td>
+              <img src="12deoctubre.png"
+              "22" height="22">
+              12 de Octubre </td>
+            <td>   13</td>
+             <td>4</td>
+             <td>3</td>
+             <td>6</td>
+             <td>15</td>
+             <td>17</td>
+             <td>-2</td>
+             <td>15</td>
+             <td><img src="igual.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" > ;</td>
+          </tr> <!-- fin 12 de octubre -->
+
+          <tr> <!--Gral Caballero -->
+            <td>
+              <img src="gralcaballero.png"
+              "22" height="22">
+              General Caballero </td>
+            <td>   13</td>
+             <td>3</td>
+             <td>3</td>
+             <td>7</td>
+             <td>11</td>
+             <td>18</td>
+             <td>-7</td>
+             <td>12</td>
+             <td><img src="mal.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" >
+                  <img src="ok.png" "15" height="15" > </td>
+          </tr> <!--General Caballero -->
+          
+          <tr> <!--tacuary -->
+            <td>
+              <img src="ameliano.png"
+              "22" height="22">
+              Ameliano </td>
+            <td>   13</td>
+             <td>2</td>
+             <td>6</td>
+             <td>5</td>
+             <td>10</td>
+             <td>21</td>
+             <td>-11</td>
+             <td>12</td>
+             <td><img src="ok.png" "15" height="15" >
+                  <img src="mal.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" >
+                  <img src="igual.png" "15" height="15" > </td>
+          </tr> 
+          
+          <!--fin tacuary -->
+             <!--<td>4. Resistencia </td>
+             <td>5. Sol de America </td>
+             <td>6. Nacional </td>
+             <td>7. Tebicuary </td>
+             <td>8. Guarani </td>
+             <td>9. Guairena </td>
+             <td>10. 12 de Octubre </td>
+             <td>11. General Caballeros </td>
+             <td>12. Sportivo Ameliano </td>
+        </tr>-->
+
+
+    </table>
+</body>
+</html>
