@@ -1,16 +1,53 @@
 .sec_1{ /*imagen de sol de america*/
-    text-align:center;
-    position:fixed;
-  left: 300px;
-  top: 0px;
-  z-index: -1;
+
+    position:absolute;
+  left: 290px;
+  top: 40px;
+  border: 1px solid black;
+  
+  z-index: 1;
     
     
 }
 
-.sec_2{
-  position:fixed;
-  left: 350px;
-  top: 0px;
-  z-index: -1;
+.sec_2{/* config de olimpia*/
+  position:absolute;
+  left: 370px;
+  top: 120px;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.sec_3{ /* config de libertad*/
+    position:absolute ;
+    left: 450px;
+    top: 200px;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+.sec_4{ /*config para guairena*/
+  position: absolute;
+  left: 530px;
+  top: 280px;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.sec_5{ /*comfiguracion para nacional*/
+  position: absolute;
+  left: 610px;
+  top: 360px;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.sec_1:hover,
+.sec_2:hover,
+.sec_3:hover,
+.sec_4:hover,
+.sec_5:hover {
+  z-index: 10; /* para que se ponga arriba*/
+  transform: scale(1.05);
+  transition: 0.3s;
 }
