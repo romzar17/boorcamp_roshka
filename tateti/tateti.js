@@ -1,16 +1,20 @@
-// Seleccionamos todas las celdas y el botón
-const celdas = document.querySelectorAll(".cuadrado");
-const btnReiniciar = document.getElementById("Reiniciar");
+// agarramos las celdas, botón y cosas varias
+var cuadritos = document.querySelectorAll(".cuadrado");
+var botonReset = document.getElementById("Reiniciar");
 
-// Variables del juego
-let jugadorX = "";
-let jugadorO = "";
-let turno = "X";
-let tablero = ["", "", "", "", "", "", "", "", ""];
-let juegoActivo = false;
+// jugadores
+var jugadorX = "";
+var jugadorO = "";
+var turno = "X";
 
-// Combinaciones ganadoras
-const combinacionesGanadoras = [
+// tablero
+var tablero = ["", "", "", "", "", "", "", "", ""];
+
+// estado del juego
+var jugando = false;
+
+// combinaciones ganadoras, sí, me las aprendí de memoria 😅
+var ganadores = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -21,66 +25,86 @@ const combinacionesGanadoras = [
     [2,4,6]
 ];
 
-// Pedir nombres al cargar la página
-window.onload = () => {
-    jugadorX = prompt("Nombre del jugador X:");
-    jugadorO = prompt("Nombre del jugador O:");
+// pedimos nombres
+window.onload = function() {
+    jugadorX = prompt("Dime tu nombre X:");
+    jugadorO= prompt("Dime tu nombre O:");
 
-    if (!jugadorX || !jugadorO) {
-        alert("Error: debe ingresar el nombre de ambos jugadores");
+    if(!jugadorX|| !jugadorO) {
+        alert("No ingresaste el nombre");
         return;
     }
 
-    juegoActivo = true;
-    alert(`Comienza ${jugadorX} con la X`);
-};
-
-// Función que verifica ganador
-function hayGanador() {
-    return combinacionesGanadoras.some(combinacion =>
-        combinacion.every(pos => tablero[pos] === turno)
-    );
+    jugando = true;
+    alert(jugadorX + " empieza con la X");
 }
 
-// Click en cada celda
-celdas.forEach((celda, index) => {
-    celda.addEventListener("click", () => {
+// revisar si alguien gana, o empate
+function checkGanador() {
+    // recorro todas las combinaciones
+    for(var i=0;i<ganadores.length;i++){
+        var a = ganadores[i][0];
+        var b = ganadores[i][1];
+        var c = ganadores[i][2];
 
-        if (!juegoActivo) return;
-        if (tablero[index] !== "") return;
-
-        tablero[index] = turno;
-        celda.textContent = turno;
-
-        if (hayGanador()) {
-            alert(`Ganó ${turno === "X" ? jugadorX : jugadorO}`);
-            juegoActivo = false;
-            return;
+        // si hay una línea
+        if(tablero[a] != "" && tablero[a] == tablero[b] && tablero[a] == tablero[c]){
+            return true;
         }
+    }
+    return false;
+}
 
-        if (!tablero.includes("")) {
-            alert("Empate 😐");
-            juegoActivo = false;
-            return;
-        }
+// click de las sceldas
+for(var i=0;i<cuadritos.length;i++){
+    (function(idx){
+        cuadritos[idx].addEventListener("click", function(){
+            if(!jugando) return;
+            if(tablero[idx] != "") return;
 
-        // Cambiar turno
-        turno = turno === "X" ? "O" : "X";
-    });
-});
+            tablero[idx] = turno;
+            cuadritos[idx].textContent = turno;
 
-// Función para reiniciar el juego
-function reiniciarJuego() {
-    tablero = ["", "", "", "", "", "", "", "", ""];
+            if(checkGanador()){
+                alert("Gano " + (turno=="X"?jugadorX:jugadorO) + " 🎉");
+                jugando = false;
+                return;
+            }
+
+            // empate
+            var vacio = false;
+            for(var j=0;j<tablero.length;j++){
+                if(tablero[j] == ""){
+                    vacio = true;
+                    break;
+                }
+            }
+            if(!vacio){
+                alert("Empate 😐");
+                jugando = false;
+                return;
+            }
+
+            // cambio de turno, ya basta de X y O
+            turno = (turno=="X")?"O":"X";
+        });
+    })(i);
+}
+
+// reiniciar juego
+function reiniciarJuego(){
+    // limpio tablero
+    for(var i=0;i<tablero.length;i++){
+        tablero[i] = "";
+        cuadritos[i].textContent = "";
+    }
+
     turno = "X";
-    juegoActivo = true;
+    jugando = true;
 
-    celdas.forEach(celda => {
-        celda.textContent = "";
-    });
-
-    alert(`Nuevo juego. Comienza ${jugadorX} con la X`);
+    alert("Nuevo juego, empieza " + jugadorX);
 }
 
-// Listener del botón
-btnReiniciar.addEventListener("click", reiniciarJuego);
+// listener del boton
+botonReset.addEventListener("click", reiniciarJuego);
+
