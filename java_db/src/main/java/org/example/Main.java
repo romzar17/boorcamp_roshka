@@ -1,5 +1,18 @@
 package org.example;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Main {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
+}
+
+/*package org.example;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +38,7 @@ public class Main {
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
-            while (rs.next()) { //datos manualmente 
+            while (rs.next()) { //datos manualmente
                 System.out.println("--------------------------------------");
                 System.out.println("ID: " + rs.getInt("id_prestamo_libro"));
                 System.out.println("Profesor: " + rs.getString("nom_profesor"));
@@ -36,4 +49,4 @@ public class Main {
             System.err.println("Error de conexión o SQL: " + e.getMessage());
         }
     }
-}
+}*/
