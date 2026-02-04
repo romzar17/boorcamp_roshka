@@ -1,5 +1,6 @@
 package org.example.controlador;
 
+import org.example.Dto.ProfesorDTO;
 import org.example.modelos.Profesor;
 import org.example.servicios.ProfesorService;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,8 @@ public class ProfesorController {
         this.profesorService = profesorService;
     }
 
+    // ENTITY
+
     @GetMapping
     public List<Profesor> listar() {
         return profesorService.listar();
@@ -24,5 +27,28 @@ public class ProfesorController {
     @PostMapping
     public Profesor guardar(@RequestBody Profesor profesor) {
         return profesorService.guardar(profesor);
+    }
+
+    @GetMapping("/{id}")
+    public Profesor buscarPorId(@PathVariable Integer id) {
+        return profesorService.buscarPorId(id);
+    }
+    @PutMapping("/{id}")
+    public Profesor actualizar(@PathVariable Integer id,
+                               @RequestBody Profesor profesor) {
+        return profesorService.actualizar(id, profesor);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Integer id) {
+        profesorService.eliminar(id);
+    }
+
+
+
+
+    //dto
+    @GetMapping("/dto")
+    public List<ProfesorDTO> listarDTO() {
+        return profesorService.listarDTO();
     }
 }
